@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+
+    <title>Treasure Quest - Hint Codes</title>
+
+    <!-- Mobiscroll JS and CSS Includes -->
+    <link rel="stylesheet" href="css/mobiscroll.javascript.min.css">
+    <script src="js/mobiscroll.javascript.min.js"></script>
+    <script src="js/mobileOnly.js"></script>
+
+    <!-- Accessible only with a mobile phone -->
+    <script>
+        if(!mobileCheck()) {
+                document.location.href="pages/mobileOnly.html";
+        }
+    </script>
+
+    <style type="text/css">
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        button {
+            display: inline-block;
+            margin: 5px 5px 0 0;
+            padding: 10px 30px;
+            outline: 0;
+            border: 0;
+            cursor: pointer;
+            background: #5185a8;
+            color: #fff;
+            text-decoration: none;
+            font-family: arial, verdana, sans-serif;
+            font-size: 14px;
+            font-weight: 100;
+        }
+
+        input {
+            width: 100%;
+            margin: 0 0 5px 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 0;
+            font-family: arial, verdana, sans-serif;
+            font-size: 14px;
+            box-sizing: border-box;
+            -webkit-appearance: none;
+        }
+
+        .mbsc-page {
+            padding: 1em;
+        }
+
+    </style>
+
+</head>
+<body>
+
+<div mbsc-page class="demo-pin">
+    <div style="height:100%">
+        <input id="demo" placeholder="Please Select ..." />
+
+        <button id="clear">Clear</button>
+        <button id="validate">Validate</button>
+
+    </div>
+</div>
+
+<script>
+    mobiscroll.settings = {
+        theme: 'ios',
+        themeVariant: 'light',
+        lang: 'fr'
+    };
+
+    const instance = mobiscroll.numpad('#demo', {
+        theme: 'ios',                       // Specify theme like: theme: 'ios' or omit setting to use default
+        themeVariant: 'light',              // More info about themeVariant: https://docs.mobiscroll.com/4-10-9/javascript/numpad#opt-themeVariant
+        lang: 'fr',                         // Specify language like: lang: 'pl' or omit setting to use default
+        template: 'dddd',                   // More info about template: https://docs.mobiscroll.com/4-10-9/javascript/numpad#opt-template
+        allowLeadingZero: true,             // More info about allowLeadingZero: https://docs.mobiscroll.com/4-10-9/javascript/numpad#opt-allowLeadingZero
+        placeholder: '-',                   // More info about placeholder: https://docs.mobiscroll.com/4-10-9/javascript/numpad#opt-placeholder
+        mask: '*',                          // More info about mask: https://docs.mobiscroll.com/4-10-9/javascript/numpad#opt-mask
+        validate: function (event, inst) {  // More info about validate: https://docs.mobiscroll.com/4-10-9/javascript/numpad#event-validate
+            return {
+                invalid: event.values.length !== 4
+            };
+        }
+    });
+
+    document
+        .getElementById('demo')
+        .addEventListener('click', function () {
+            instance.show();
+        }, false);
+
+    document
+        .getElementById('clear')
+        .addEventListener('click', function () {
+            instance.clear();
+        }, false);
+
+    document
+        .getElementById('validate')
+        .addEventListener('click', function () {
+            redirect(instance.getArrayVal());
+    }, false);
+
+    function redirect(values) {
+        values = values[0] * 1000 + values [1] * 100 + values[2] * 10 + values[3];
+        window.alert(values);
+        instance.clear();
+    }
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+html {
+    background: linear-gradient(45deg, #e66465, #9198e5);
+}
+
+.content {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    background: white;
+}
+
+.box {
+    min-height: 20%;
+    min-width: 20%;
+    background: white;
+    border-color: whitesmoke;
+    border-style: solid;
+    border-width: medium;
+    border-radius: 10px;
+}
+
+.data {
+    font-family: "Helvetica Neue";
+    font-size: large;
+}
