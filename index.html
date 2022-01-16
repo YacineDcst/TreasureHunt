@@ -112,8 +112,45 @@
 
     function redirect(values) {
         values = values[0] * 1000 + values [1] * 100 + values[2] * 10 + values[3];
-        window.alert(values);
         instance.clear();
+        switch (values) {
+            case 4674 :
+                document.location.href="pages/StartSolution.html";
+                break;
+            case 5233 :
+                document.location.href="pages/2-Hint.html";
+                break;
+            case 6977 :
+                document.location.href="pages/2-Solution.html";
+                break;
+            case 8373 :
+                document.location.href="pages/3-Hint.html";
+                break;
+            case 9322 :
+                document.location.href="pages/3-Rep-Hint.html";
+                break;
+            case 13 :
+                document.location.href="pages/4-Text.html";
+                break;
+            case 8135 :
+                document.location.href="pages/4-Solution.html";
+                break;
+            case 5404 :
+                document.location.href="pages/5-Solution.html";
+                break;
+            case 8676 :
+                document.location.href="pages/6-Solution.html";
+                break;
+            case 4750 :
+                document.location.href="pages/7-Solution.html";
+                break;
+            case 5254 :
+                document.location.href="pages/8-Solution.html";
+                break;
+            default :
+                window.alert("Wrong code !");
+                break;
+        }
     }
 
 </script>
