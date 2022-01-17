@@ -11,8 +11,16 @@ html {
     background: white;
 }
 
+.content2 {
+    position: relative;
+    float: left;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 .box {
-    min-height: 50%;
+    min-height: 20%;
     min-width: 50%;
     background: white;
     border-color: whitesmoke;
@@ -22,6 +30,9 @@ html {
 }
 
 .data {
+    text-align: center;
+    min-font-size: 20em;
+    width: 100%;
     font-family: "Helvetica Neue";
     font-size: large;
 }
